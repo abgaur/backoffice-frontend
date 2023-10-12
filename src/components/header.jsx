@@ -5,7 +5,7 @@ function Header() {
     return (
         <div>
             <h1>This is a new header</h1>
-            <h2>Another header</h2>
+            <p>this is CI CD test</p>
         </div>
     )
 }
