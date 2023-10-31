@@ -42,6 +42,7 @@ const App = ({ signOut }) => {
         </Route>
       </Routes>
         
+
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
