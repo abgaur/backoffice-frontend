@@ -11,6 +11,7 @@ import {
   View,
   withAuthenticator,
 } from '@aws-amplify/ui-react';
+import { Link} from "react-router-dom";
 import { listNotes } from "../../graphql/queries";
 import {
   createNote as createNoteMutation,
@@ -46,6 +47,7 @@ const AddProducts = () => {
     const data = {
       name: form.get("name"),
       description: form.get("description"),
+      rating: form.get("rating"),
       image: image.name,
     };
     if (!!data.image) await Storage.put(data.name, image);
@@ -89,12 +91,27 @@ const AddProducts = () => {
             variation="quiet"
             required
           />
-          <View
-            name="image"
-            as="input"
-            type="file"
-            style={{ alignSelf: "end" }}
+          <TextField
+            name="rating"
+            placeholder="Product rating"
+            label="Product rating"
+            labelHidden
+            variation="quiet"
+            required
           />
+
+
+
+
+          <View
+          name="image"
+          as="input"
+          type="file"
+          style={{ alignSelf: "end" }}
+        />
+ 
+
+          
           <Button type="submit" variation="primary">
             Create Product
           </Button>
@@ -113,13 +130,18 @@ const AddProducts = () => {
           <Text as="strong" fontWeight={700}>
             {note.name}
           </Text>
+          <Text as="strong" fontWeight={700}>
+            {note.rating}
+          </Text>
           <Text as="span">{note.description}</Text>
           {note.image && (
+            <Link to={`/productdetails/${note.id}`}> 
             <Image
               src={note.image}
               alt={`visual aid for ${notes.name}`}
               style={{ width: 400 }}
             />
+            </Link>
           )}
           <Button variation="link" onClick={() => deleteNote(note)}>
             Delete product
