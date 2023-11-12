@@ -33,7 +33,7 @@ const App = ({ signOut }) => {
       <Routes>
         <Route path="/" element={<h1>Product page11</h1>} />
         <Route path="/products" element={<AddProducts />} />
-        <Route path="/productdetails" element={<ProductDetails />}>
+        <Route path="/productdetails/:id" element={<ProductDetails />}>
         
           {/* <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
