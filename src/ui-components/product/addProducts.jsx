@@ -100,9 +100,6 @@ const AddProducts = () => {
             required
           />
 
-
-
-
           <View
           name="image"
           as="input"
@@ -120,7 +117,34 @@ const AddProducts = () => {
       
       <Heading level={2}>Current Products</Heading>
       <View margin="3rem 0">
+      <div class="container">
+       
+       <div class="row">
       {notes.map((note) => (
+<>
+
+
+        
+          <div class="col-md-4">
+          <Link to={`/productdetails/${note.id}`}> 
+            <div class="thumbnail">
+              <a href="/w3images/lights.jpg" target="_blank">
+                <img src={note.image}
+                class="img-thumbnail" 
+                  alt={`visual aid for ${notes.name}`}
+                  style={{ width: 400 }}
+               />
+             
+                <div class="caption">
+                  <p>{note.name}</p>
+                </div>
+              </a>
+            </div>
+            </Link>
+          </div>
+         
+
+{/* 
         <Flex
           key={note.id || note.name}
           direction="row"
@@ -146,8 +170,11 @@ const AddProducts = () => {
           <Button variation="link" onClick={() => deleteNote(note)}>
             Delete product
           </Button>
-        </Flex>
+        </Flex> */}
+        </>
       ))}
+              </div>
+        </div>
       </View>
     </View>
   );
