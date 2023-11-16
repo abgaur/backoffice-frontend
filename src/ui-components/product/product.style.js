@@ -8,6 +8,16 @@ const Title = styled.h1`
   color: #BF4F74;
 `;
 
+const StaticContent = styled.div`
+  color:black;
+`;
+
+const UpdateContent = styled.div`
+  color:black;
+`;
+
 export {
+  StaticContent,
     Title,
+    UpdateContent,
 }
