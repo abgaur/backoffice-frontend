@@ -31,7 +31,7 @@ const App = ({ signOut }) => {
     <View className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Product page11</h1>} />
+        <Route path="/" element={<h1>LAnding Page</h1>} />
         <Route path="/products" element={<AddProducts />} />
         <Route path="/productdetails/:id" element={<ProductDetails />}>
         
