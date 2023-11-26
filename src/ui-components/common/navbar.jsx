@@ -7,12 +7,14 @@ import {
   } from "react-router-dom";
 
 
-const Navbar = () => {
+const Navbar = ({
+    signOut,
+}) => {
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-            <a className="navbar-brand" href="#">Navbar</a>
+            <a className="navbar-brand" href="/">Backoffice</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -26,11 +28,15 @@ const Navbar = () => {
                     <Link className="nav-link active" to="/">Home</Link>
                 </li>  
                 <li className="nav-item">
-                    <Link className="nav-link active" to="/productdetails">Product Details</Link>
+                    <Link className="nav-link active" to="/productdetails/cfc356ef-1c24-42a8-9d35-6fbda5c371a1">Product Details</Link>
                 </li>  
             </ul>
             </div>
         </div>
+        <form class="container-fluid justify-content-end">
+            <button class="btn btn-outline-success me-2" type="button" onClick={signOut}>Sign Out</button>
+            
+        </form>
     </nav>
   );
 };

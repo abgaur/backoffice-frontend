@@ -55,3 +55,57 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
+export const createLandingImage = /* GraphQL */ `
+  mutation CreateLandingImage(
+    $input: CreateLandingImageInput!
+    $condition: ModelLandingImageConditionInput
+  ) {
+    createLandingImage(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;
+export const updateLandingImage = /* GraphQL */ `
+  mutation UpdateLandingImage(
+    $input: UpdateLandingImageInput!
+    $condition: ModelLandingImageConditionInput
+  ) {
+    updateLandingImage(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;
+export const deleteLandingImage = /* GraphQL */ `
+  mutation DeleteLandingImage(
+    $input: DeleteLandingImageInput!
+    $condition: ModelLandingImageConditionInput
+  ) {
+    deleteLandingImage(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;

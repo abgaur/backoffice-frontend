@@ -23,15 +23,16 @@ import {
 import AddProducts from './ui-components/product/addProducts';
 import ProductDetails from './ui-components/product/productDetails';
 import Navbar from './ui-components/common/navbar';
+import LandingPage from './ui-components/common/landingPage';
 
 
 const App = ({ signOut }) => {
   
   return (
     <View className="App">
-      <Navbar />
+      <Navbar signOut={signOut}/>
       <Routes>
-        <Route path="/" element={<h1>LAnding Page</h1>} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<AddProducts />} />
         <Route path="/productdetails/:id" element={<ProductDetails />}>
         

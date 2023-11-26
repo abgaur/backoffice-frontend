@@ -10,3 +10,18 @@ type Note @model @auth(rules: [ { allow: public } ] ){
   rating: String,
   price: String,
 }
+
+type LandingImage @model @auth(rules: [ { allow: public } ] ){
+  id: ID!
+  name: String!
+  description: String
+  image: String,
+  sequence: String,
+  type: String!
+    @index(
+      name: "landingByDate"
+      queryField: "landingByDate"
+      sortKeyFields: ["updatedAt"]
+    )
+  updatedAt: String,
+}
