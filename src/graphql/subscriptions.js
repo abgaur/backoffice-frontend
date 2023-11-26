@@ -46,3 +46,54 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreateLandingImage = /* GraphQL */ `
+  subscription OnCreateLandingImage(
+    $filter: ModelSubscriptionLandingImageFilterInput
+  ) {
+    onCreateLandingImage(filter: $filter) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;
+export const onUpdateLandingImage = /* GraphQL */ `
+  subscription OnUpdateLandingImage(
+    $filter: ModelSubscriptionLandingImageFilterInput
+  ) {
+    onUpdateLandingImage(filter: $filter) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;
+export const onDeleteLandingImage = /* GraphQL */ `
+  subscription OnDeleteLandingImage(
+    $filter: ModelSubscriptionLandingImageFilterInput
+  ) {
+    onDeleteLandingImage(filter: $filter) {
+      id
+      name
+      description
+      image
+      sequence
+      type
+      updatedAt
+      createdAt
+      __typename
+    }
+  }
+`;
