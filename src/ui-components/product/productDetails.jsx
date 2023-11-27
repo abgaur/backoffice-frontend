@@ -178,13 +178,15 @@ const ProductDetails = () => {
                     </div>
               </div>
                 <h2>{productName}</h2>
-                <h2>{description}</h2>
-                <h2>{price}</h2>
-                <h2>{rating}</h2>
-                {/* <div className="input-group mb-3">
-                  <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
 
-                    </div> */}
+         
+                <p class="fs-4 offset-4">Price: ${price}</p>
+                <p class="fs-4 offset-4">Rating: {rating}</p>
+                
+                <p class="fs-3 ">Details</p>
+                <p class="fs-4 ">{description}</p>
+                
+
            
 
 
@@ -223,17 +225,17 @@ const ProductDetails = () => {
                     
                     <div class="input-group mb-3">
                       <label for="basic-url" class="form-label">Product Description: &nbsp;&nbsp;</label>
-                      <input type="text" class="form-control" id="basic-url" placeholder={description} onChange={handleDescChange}/>
+                      <input type="text" class="form-control" id="basic-url" placeholder={description} value={description} onChange={handleDescChange}/>
                     </div>
 
                     <div class="input-group mb-3">
                       <label for="rating" class="form-label">Product Rating: &nbsp;&nbsp;</label>
-                      <input type="text" class="form-control" id="rating" placeholder={rating} onChange={handleRatingChange}/>
+                      <input type="text" class="form-control" id="rating" placeholder={rating} value={rating} onChange={handleRatingChange}/>
                     </div>
 
                     <div class="input-group mb-3">
                       <label for="rating" class="form-label">Product Price:&nbsp;&nbsp; </label>
-                      <input type="text" class="form-control" id="rating" placeholder={price} onChange={handlePriceChange} />
+                      <input type="text" class="form-control" id="rating" placeholder={price} value={price} onChange={handlePriceChange} />
                     </div>
 
 
