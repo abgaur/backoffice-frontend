@@ -15,8 +15,10 @@ import { Link} from "react-router-dom";
 import { listLandingImages, landingByDate } from "../../graphql/queries";
 import {
   createLandingImage as createLandingImageMutation,
+  deleteLandingImage as deleteLandingImageMutation, 
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
+  updateLandingImage,
 } from "../../graphql/mutations";
 import { CustomImage,
 } from './common.style'
@@ -78,6 +80,32 @@ const LandingPage = () => {
     console.log('landing111');
   }
 
+  async function boost(img) {
+    // event.preventDefault();
+    const data = {
+      id: img.id,
+      name: img.name,
+      description: img.description,
+      sequence: "1",
+      type: "landingImage",
+    };
+    await API.graphql({
+      query: updateLandingImage,
+      variables: { input: data },
+    });
+    fetchLandingImages();
+  }
+
+  async function deleteImage({ id, name }) {
+
+    await Storage.remove(name);
+    await API.graphql({
+      query: deleteLandingImageMutation,
+      variables: { input: { id } },
+    });
+
+    fetchLandingImages();
+  }
 
 
   async function createLandingImage(event) {
@@ -134,7 +162,7 @@ const LandingPage = () => {
 
           
           <Button type="submit" variation="primary">
-            Create Product
+            Add Image
           </Button>
         </Flex>
       </View>  
@@ -159,6 +187,8 @@ const LandingPage = () => {
 
                   alt={`visual aid for ${landing.name}`}
                />
+               <button className="btn btn-primary" onClick={() =>boost(landing)} >Boost</button>&nbsp;&nbsp;&nbsp;&nbsp;
+               <button className="btn btn-secondary" onClick={() =>deleteImage(landing)}>Delete</button>
              
               
             
