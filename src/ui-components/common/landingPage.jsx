@@ -162,7 +162,7 @@ const LandingPage = () => {
 
           
           <Button type="submit" variation="primary">
-            Add Image
+            Add Landing Image
           </Button>
         </Flex>
       </View>  
